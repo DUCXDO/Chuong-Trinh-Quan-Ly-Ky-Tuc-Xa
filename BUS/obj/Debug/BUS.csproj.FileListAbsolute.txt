@@ -1,0 +1,12 @@
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\BUS.dll
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\BUS.pdb
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\DAO.dll
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\EntityFramework.dll
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\DAO.pdb
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\DAO.dll.config
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\EntityFramework.xml
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\obj\Debug\BUS.dll
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\obj\Debug\BUS.pdb
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\DTO.dll
+C:\Users\ducvu\Desktop\Project KTX\ProjectKTX\BUS\bin\Debug\DTO.pdb
