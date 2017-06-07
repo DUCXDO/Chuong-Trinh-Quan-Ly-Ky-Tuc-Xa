@@ -15,7 +15,7 @@ namespace DAO
         TAISAN TimTSTheoMaTS(String MaTS);
         IEnumerable<TAISAN> TimTS(TAISANDTO ts);
     }
-    class TaiSanDAO
+    public class TaiSanDAO : ITaiSanDAO
     {
         public TAISAN ThemTS(TAISANDTO ts)
         {
