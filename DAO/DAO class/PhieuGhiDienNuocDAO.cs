@@ -16,7 +16,7 @@ namespace DAO
         PHIEUGHIDIENNUOC TimPGDNTheoMaS(String maS);
         IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOC pg);
     }
-    class PhieuGhiDienNuocDAO : IPhieuGhiDienNuocDAO
+    public class PhieuGhiDienNuocDAO : IPhieuGhiDienNuocDAO
     {
         public PHIEUGHIDIENNUOC ThemPGDN(PHIEUGHIDIENNUOCDTO pg)
         {

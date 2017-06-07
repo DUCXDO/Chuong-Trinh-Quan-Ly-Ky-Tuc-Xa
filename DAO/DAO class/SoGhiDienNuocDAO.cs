@@ -14,7 +14,7 @@ namespace DAO
         SOGHIDIENNUOC TimSGDNTheoMaSGDN(String MaSG);
         IEnumerable<SOGHIDIENNUOC> TimSGDN(SOGHIDIENNUOCDTO sg);
     }
-    class SoGhiDienNuocDAO : ISoGhiDienNuocDAO
+    public class SoGhiDienNuocDAO : ISoGhiDienNuocDAO
     {
         public SOGHIDIENNUOC ThemSGDN(SOGHIDIENNUOCDTO sg)
         {
@@ -44,7 +44,7 @@ namespace DAO
             {
                 //Khai báo kết nối data
                 KTXEntities KTXe = new KTXEntities();
-                SOGHIDIENNUOC editSG = KTXe.SOGHIDIENNUOCs.Find(sg);
+                SOGHIDIENNUOC editSG = KTXe.SOGHIDIENNUOCs.SingleOrDefault(x => x.MaSo == sg.MaSo);
                 editSG.MaSo = sg.MaSo;
                 editSG.Nam = sg.Nam;
                 editSG.TenSo = sg.TenSo;
@@ -68,7 +68,7 @@ namespace DAO
             try
             {
                 KTXEntities KTXe = new KTXEntities();
-                SOGHIDIENNUOC delSG = KTXe.SOGHIDIENNUOCs.Find(MaSG);
+                SOGHIDIENNUOC delSG = KTXe.SOGHIDIENNUOCs.SingleOrDefault(x => x.MaSo == MaSG);
                 SOGHIDIENNUOC result = KTXe.SOGHIDIENNUOCs.Remove(delSG);
                 return result;
             }catch(Exception ex)
@@ -87,7 +87,6 @@ namespace DAO
             KTXEntities KTXe = new KTXEntities();
             SOGHIDIENNUOC findSG = KTXe.SOGHIDIENNUOCs.SingleOrDefault(x => x.MaSo == MaSG);
             return findSG;
-            
         }
         public IEnumerable<SOGHIDIENNUOC> TimSGDN(SOGHIDIENNUOCDTO sg)
         {

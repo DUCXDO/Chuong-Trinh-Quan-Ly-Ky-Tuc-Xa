@@ -87,6 +87,12 @@ namespace DAO
             return result;
 
         }
+        public PHIEUTHU TimPTTheoSoHD(String soHD)
+        {
+            KTXEntities KTXe = new KTXEntities();
+            PHIEUTHU findPT = KTXe.PHIEUTHUs.SingleOrDefault(x => x.SoHD == soHD);
+            return findPT;
+        }
     }
 }
 
