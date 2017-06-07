@@ -61,11 +61,6 @@
     <Compile Include="iTalk Theme.cs" />
     <Compile Include="MonoFlat Theme.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Project_KTXDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Project_KTXDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -80,17 +75,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Project_KTXDataSet.xsc">
-      <DependentUpon>Project_KTXDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Project_KTXDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Project_KTXDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Project_KTXDataSet.xss">
-      <DependentUpon>Project_KTXDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -24,6 +24,22 @@ namespace ProjectKTX
 
         #region Sinh viên - Tìm kiếm
 
+        // Load combo box khi vào tabpage tìm kiếm
+        private void TabPage_Child_SinhVien_TimKiem_Enter(object sender, EventArgs e)
+        {
+            BindingList<PHONG> dataSource = new BindingList<PHONG>();
+
+            foreach(var item in BUS.DSTatCaPhong())
+            {
+                dataSource.Add(item);
+            }
+            // Đưa danh sách phòng thành datasource của combo box
+            ComboBox_SinhVien_TimKiem_Phong.DataSource = dataSource;
+            // Đặt giá trị hiện ra và giá trị chọn của combo box
+            ComboBox_SinhVien_TimKiem_Phong.DisplayMember = "TenP";
+            ComboBox_SinhVien_TimKiem_Phong.ValueMember = "MaPhong";
+        }
+
         // Nút tìm kiếm được bấm
         private void Button_SinhVien_TimKiem_TimKiem_Click(object sender, EventArgs e)
         {
@@ -284,8 +300,7 @@ namespace ProjectKTX
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'project_KTXDataSet.PHONG' table. You can move, or remove it, as needed.
-            this.PHONGTableAdapter.Fill(this.project_KTXDataSet.PHONG);
+            
         }
 
         // Hàm làm trắng textbox trong control
@@ -299,5 +314,7 @@ namespace ProjectKTX
                     ClearAllText(c);
             }
         }
+
+        
     }
 }
