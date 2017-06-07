@@ -172,11 +172,14 @@ namespace BUS
             
         }
 
-        // các hàm mới thêm
-
         public IEnumerable<SINHVIEN> TimTatCaSV()
         {
             return _sv.TimTatCaSV();
+        }
+
+        public IEnumerable<PHONG> DSTatCaPhong()
+        {
+            return _p.TimTatCaP();
         }
 
         public SINHVIENDTO chuyenDoiSVThanhSVDTO(SINHVIEN sv)
