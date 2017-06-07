@@ -9,7 +9,6 @@ namespace DAO
     public interface IHoaDonDAO
     {
         HOADON ThemHD(HOADONDTO hd);
-        HOADON SuaHD(HOADONDTO hd);
         HOADON XoaHD(String MaHD);
         IEnumerable<HOADON> TimTatCaHD();
         HOADON TimHDTheoMaHD(String MaHD);
@@ -44,34 +43,6 @@ namespace DAO
                 return null;
             }
 
-        }
-        public HOADON SuaHD(HOADONDTO hd)
-        {
-            try
-            {
-                //Khai báo kết nối data
-                KTXEntities KTXe = new KTXEntities();
-                HOADON editHD = KTXe.HOADONs.Find(hd);
-                editHD.MaPhong = hd.MaPhong;
-                editHD.MaSo = hd.MaSo;
-                editHD.NgayLap = hd.NgayLap;
-                editHD.SoHoaDon = hd.SoHoaDon;
-                editHD.SoTien = hd.SoTien;
-                int result = KTXe.SaveChanges();
-                if (result == 1)
-                {
-                    return editHD;
-                }
-                else
-                {
-                    return null;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
         }
         public HOADON XoaHD(String MaHD)
         {
