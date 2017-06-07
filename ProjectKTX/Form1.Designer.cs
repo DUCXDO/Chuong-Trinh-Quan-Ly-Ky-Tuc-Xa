@@ -498,7 +498,11 @@
             this.Button_SinhVien_TimKiem_Sua.Image = null;
             this.Button_SinhVien_TimKiem_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 265);
+=======
+            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
+>>>>>>> e631f7217c6dc757ad2f9813237889dfdefd0ca3
 =======
             this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
 >>>>>>> e631f7217c6dc757ad2f9813237889dfdefd0ca3
