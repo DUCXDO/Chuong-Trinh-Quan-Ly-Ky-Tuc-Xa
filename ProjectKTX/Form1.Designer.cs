@@ -469,7 +469,7 @@
             this.Button_SinhVien_TimKiem_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Xoa.Image = null;
             this.Button_SinhVien_TimKiem_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 384);
+            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 338);
             this.Button_SinhVien_TimKiem_Xoa.Name = "Button_SinhVien_TimKiem_Xoa";
             this.Button_SinhVien_TimKiem_Xoa.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Xoa.TabIndex = 4;
@@ -483,7 +483,7 @@
             this.Button_SinhVien_TimKiem_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_TimKiem.Image = null;
             this.Button_SinhVien_TimKiem_TimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_TimKiem.Location = new System.Drawing.Point(578, 96);
+            this.Button_SinhVien_TimKiem_TimKiem.Location = new System.Drawing.Point(578, 94);
             this.Button_SinhVien_TimKiem_TimKiem.Name = "Button_SinhVien_TimKiem_TimKiem";
             this.Button_SinhVien_TimKiem_TimKiem.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_TimKiem.TabIndex = 3;
@@ -497,7 +497,7 @@
             this.Button_SinhVien_TimKiem_Sua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Sua.Image = null;
             this.Button_SinhVien_TimKiem_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 267);
+            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
             this.Button_SinhVien_TimKiem_Sua.Name = "Button_SinhVien_TimKiem_Sua";
             this.Button_SinhVien_TimKiem_Sua.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Sua.TabIndex = 2;
@@ -793,7 +793,7 @@
             this.Button_SinhVien_ThemSua_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_ThemSua_Xoa.Image = null;
             this.Button_SinhVien_ThemSua_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_ThemSua_Xoa.Location = new System.Drawing.Point(578, 256);
+            this.Button_SinhVien_ThemSua_Xoa.Location = new System.Drawing.Point(578, 270);
             this.Button_SinhVien_ThemSua_Xoa.Name = "Button_SinhVien_ThemSua_Xoa";
             this.Button_SinhVien_ThemSua_Xoa.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_ThemSua_Xoa.TabIndex = 24;
@@ -821,7 +821,7 @@
             this.Button_SinhVien_ThemSua_Sua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_ThemSua_Sua.Image = null;
             this.Button_SinhVien_ThemSua_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_ThemSua_Sua.Location = new System.Drawing.Point(578, 145);
+            this.Button_SinhVien_ThemSua_Sua.Location = new System.Drawing.Point(578, 144);
             this.Button_SinhVien_ThemSua_Sua.Name = "Button_SinhVien_ThemSua_Sua";
             this.Button_SinhVien_ThemSua_Sua.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_ThemSua_Sua.TabIndex = 22;
