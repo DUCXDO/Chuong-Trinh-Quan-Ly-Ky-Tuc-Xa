@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.monoFlat_ThemeContainer_Bright1 = new MonoFlat.MonoFlat_ThemeContainer_Bright();
             this.monoFlat_ControlBox_Bright1 = new MonoFlat.MonoFlat_ControlBox_Bright();
             this.TabControl_Father = new iTalk.iTalk_TabControl_Blue();
@@ -219,6 +213,7 @@
             this.TabPage_Child_SinhVien_TimKiem.Size = new System.Drawing.Size(695, 492);
             this.TabPage_Child_SinhVien_TimKiem.TabIndex = 0;
             this.TabPage_Child_SinhVien_TimKiem.Text = "Tìm kiếm";
+            this.TabPage_Child_SinhVien_TimKiem.Leave += new System.EventHandler(this.TabPage_Child_SinhVien_TimKiem_Leave);
             // 
             // NotificationBox_SinhVien_TimKiem
             // 
@@ -309,14 +304,6 @@
             // 
             this.dataGridView_SinhVien_TimKiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_SinhVien_TimKiem.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_SinhVien_TimKiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_SinhVien_TimKiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_SinhVien_TimKiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
@@ -325,25 +312,10 @@
             this.SoCMND,
             this.SoDT,
             this.DiaChi});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_SinhVien_TimKiem.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_SinhVien_TimKiem.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView_SinhVien_TimKiem.Location = new System.Drawing.Point(6, 218);
+            this.dataGridView_SinhVien_TimKiem.MultiSelect = false;
             this.dataGridView_SinhVien_TimKiem.Name = "dataGridView_SinhVien_TimKiem";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_SinhVien_TimKiem.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_SinhVien_TimKiem.Size = new System.Drawing.Size(566, 264);
             this.dataGridView_SinhVien_TimKiem.TabIndex = 14;
             // 
@@ -497,7 +469,7 @@
             this.Button_SinhVien_TimKiem_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Xoa.Image = null;
             this.Button_SinhVien_TimKiem_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 384);
+            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 338);
             this.Button_SinhVien_TimKiem_Xoa.Name = "Button_SinhVien_TimKiem_Xoa";
             this.Button_SinhVien_TimKiem_Xoa.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Xoa.TabIndex = 4;
@@ -511,7 +483,7 @@
             this.Button_SinhVien_TimKiem_TimKiem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_TimKiem.Image = null;
             this.Button_SinhVien_TimKiem_TimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_TimKiem.Location = new System.Drawing.Point(578, 96);
+            this.Button_SinhVien_TimKiem_TimKiem.Location = new System.Drawing.Point(578, 94);
             this.Button_SinhVien_TimKiem_TimKiem.Name = "Button_SinhVien_TimKiem_TimKiem";
             this.Button_SinhVien_TimKiem_TimKiem.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_TimKiem.TabIndex = 3;
@@ -525,7 +497,11 @@
             this.Button_SinhVien_TimKiem_Sua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Sua.Image = null;
             this.Button_SinhVien_TimKiem_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 267);
+<<<<<<< HEAD
+            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 265);
+=======
+            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
+>>>>>>> e631f7217c6dc757ad2f9813237889dfdefd0ca3
             this.Button_SinhVien_TimKiem_Sua.Name = "Button_SinhVien_TimKiem_Sua";
             this.Button_SinhVien_TimKiem_Sua.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Sua.TabIndex = 2;
@@ -573,6 +549,7 @@
             this.TabPage_Child_SinhVien_ThemSua.Size = new System.Drawing.Size(695, 492);
             this.TabPage_Child_SinhVien_ThemSua.TabIndex = 1;
             this.TabPage_Child_SinhVien_ThemSua.Text = "Thêm/Sửa";
+            this.TabPage_Child_SinhVien_ThemSua.Leave += new System.EventHandler(this.TabPage_Child_SinhVien_ThemSua_Leave);
             // 
             // dateTimePicker_SinhVien_ThemSua_NgaySinh
             // 
@@ -655,14 +632,6 @@
             // 
             this.dataGridView_SinhVien_ThemSua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_SinhVien_ThemSua.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_SinhVien_ThemSua.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_SinhVien_ThemSua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_SinhVien_ThemSua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -671,25 +640,10 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_SinhVien_ThemSua.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_SinhVien_ThemSua.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView_SinhVien_ThemSua.Location = new System.Drawing.Point(6, 218);
+            this.dataGridView_SinhVien_ThemSua.MultiSelect = false;
             this.dataGridView_SinhVien_ThemSua.Name = "dataGridView_SinhVien_ThemSua";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_SinhVien_ThemSua.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_SinhVien_ThemSua.Size = new System.Drawing.Size(566, 264);
             this.dataGridView_SinhVien_ThemSua.TabIndex = 33;
             // 
@@ -843,12 +797,13 @@
             this.Button_SinhVien_ThemSua_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_ThemSua_Xoa.Image = null;
             this.Button_SinhVien_ThemSua_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_ThemSua_Xoa.Location = new System.Drawing.Point(578, 256);
+            this.Button_SinhVien_ThemSua_Xoa.Location = new System.Drawing.Point(578, 270);
             this.Button_SinhVien_ThemSua_Xoa.Name = "Button_SinhVien_ThemSua_Xoa";
             this.Button_SinhVien_ThemSua_Xoa.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_ThemSua_Xoa.TabIndex = 24;
             this.Button_SinhVien_ThemSua_Xoa.Text = "Xóa";
             this.Button_SinhVien_ThemSua_Xoa.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.Button_SinhVien_ThemSua_Xoa.Click += new System.EventHandler(this.Button_SinhVien_ThemSua_Xoa_Click);
             // 
             // Button_SinhVien_ThemSua_ThemMoi
             // 
@@ -870,12 +825,13 @@
             this.Button_SinhVien_ThemSua_Sua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_ThemSua_Sua.Image = null;
             this.Button_SinhVien_ThemSua_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_ThemSua_Sua.Location = new System.Drawing.Point(578, 145);
+            this.Button_SinhVien_ThemSua_Sua.Location = new System.Drawing.Point(578, 144);
             this.Button_SinhVien_ThemSua_Sua.Name = "Button_SinhVien_ThemSua_Sua";
             this.Button_SinhVien_ThemSua_Sua.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_ThemSua_Sua.TabIndex = 22;
             this.Button_SinhVien_ThemSua_Sua.Text = "Sửa";
             this.Button_SinhVien_ThemSua_Sua.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.Button_SinhVien_ThemSua_Sua.Click += new System.EventHandler(this.Button_SinhVien_ThemSua_Sua_Click);
             // 
             // iTalk_Label2
             // 
