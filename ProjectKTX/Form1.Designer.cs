@@ -469,7 +469,7 @@
             this.Button_SinhVien_TimKiem_Xoa.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Xoa.Image = null;
             this.Button_SinhVien_TimKiem_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 338);
+            this.Button_SinhVien_TimKiem_Xoa.Location = new System.Drawing.Point(578, 390);
             this.Button_SinhVien_TimKiem_Xoa.Name = "Button_SinhVien_TimKiem_Xoa";
             this.Button_SinhVien_TimKiem_Xoa.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Xoa.TabIndex = 4;
