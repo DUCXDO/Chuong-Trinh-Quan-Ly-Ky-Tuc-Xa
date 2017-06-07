@@ -285,7 +285,7 @@ namespace ProjectKTX
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_KTXDataSet.PHONG' table. You can move, or remove it, as needed.
-            this.pHONGTableAdapter.Fill(this.project_KTXDataSet.PHONG);
+            this.PHONGTableAdapter.Fill(this.project_KTXDataSet.PHONG);
         }
 
         // Hàm làm trắng textbox trong control

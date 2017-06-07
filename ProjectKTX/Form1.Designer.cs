@@ -38,7 +38,7 @@
             this.NotificationBox_SinhVien_TimKiem = new MonoFlat.MonoFlat_NotificationBox();
             this.Button_SinhVien_TimKiem_TimTheoPhong = new MonoFlat.MonoFlat_Button_Green();
             this.ComboBox_SinhVien_TimKiem_Phong = new iTalk.iTalk_ComboBox_Custom();
-            this.pHONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PHONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.project_KTXDataSet = new ProjectKTX.Project_KTXDataSet();
             this.monoFlat_Label5 = new MonoFlat.MonoFlat_Label();
             this.iTalk_HeaderLabel1 = new iTalk.iTalk_HeaderLabel();
@@ -95,13 +95,13 @@
             this.Father_TabPage4_TaiSan = new System.Windows.Forms.TabPage();
             this.Father_TabPage5_DienNuoc = new System.Windows.Forms.TabPage();
             this.Button_SinhVien_TimKiem_DangXuat = new MonoFlat.MonoFlat_Button_Green();
-            this.pHONGTableAdapter = new ProjectKTX.Project_KTXDataSetTableAdapters.PHONGTableAdapter();
+            this.PHONGTableAdapter = new ProjectKTX.Project_KTXDataSetTableAdapters.PHONGTableAdapter();
             this.monoFlat_ThemeContainer_Bright1.SuspendLayout();
             this.TabControl_Father.SuspendLayout();
             this.Father_TabPage1_SinhVien.SuspendLayout();
             this.TabControl_Child_SinhVien.SuspendLayout();
             this.TabPage_Child_SinhVien_TimKiem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pHONGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PHONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.project_KTXDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SinhVien_TimKiem)).BeginInit();
             this.TabPage_Child_SinhVien_ThemSua.SuspendLayout();
@@ -248,7 +248,7 @@
             // ComboBox_SinhVien_TimKiem_Phong
             // 
             this.ComboBox_SinhVien_TimKiem_Phong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ComboBox_SinhVien_TimKiem_Phong.DataSource = this.pHONGBindingSource;
+            this.ComboBox_SinhVien_TimKiem_Phong.DataSource = this.PHONGBindingSource;
             this.ComboBox_SinhVien_TimKiem_Phong.DisplayMember = "TenP";
             this.ComboBox_SinhVien_TimKiem_Phong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ComboBox_SinhVien_TimKiem_Phong.DropDownHeight = 100;
@@ -266,10 +266,10 @@
             this.ComboBox_SinhVien_TimKiem_Phong.TabIndex = 18;
             this.ComboBox_SinhVien_TimKiem_Phong.ValueMember = "MaPhong";
             // 
-            // pHONGBindingSource
+            // PHONGBindingSource
             // 
-            this.pHONGBindingSource.DataMember = "PHONG";
-            this.pHONGBindingSource.DataSource = this.project_KTXDataSet;
+            this.PHONGBindingSource.DataMember = "PHONG";
+            this.PHONGBindingSource.DataSource = this.project_KTXDataSet;
             // 
             // project_KTXDataSet
             // 
@@ -497,15 +497,7 @@
             this.Button_SinhVien_TimKiem_Sua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Button_SinhVien_TimKiem_Sua.Image = null;
             this.Button_SinhVien_TimKiem_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 265);
-=======
             this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
->>>>>>> e631f7217c6dc757ad2f9813237889dfdefd0ca3
-=======
-            this.Button_SinhVien_TimKiem_Sua.Location = new System.Drawing.Point(578, 270);
->>>>>>> e631f7217c6dc757ad2f9813237889dfdefd0ca3
             this.Button_SinhVien_TimKiem_Sua.Name = "Button_SinhVien_TimKiem_Sua";
             this.Button_SinhVien_TimKiem_Sua.Size = new System.Drawing.Size(106, 41);
             this.Button_SinhVien_TimKiem_Sua.TabIndex = 2;
@@ -938,9 +930,9 @@
             this.Button_SinhVien_TimKiem_DangXuat.Text = "Đăng xuất";
             this.Button_SinhVien_TimKiem_DangXuat.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // pHONGTableAdapter
+            // PHONGTableAdapter
             // 
-            this.pHONGTableAdapter.ClearBeforeFill = true;
+            this.PHONGTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -959,7 +951,7 @@
             this.TabControl_Child_SinhVien.ResumeLayout(false);
             this.TabPage_Child_SinhVien_TimKiem.ResumeLayout(false);
             this.TabPage_Child_SinhVien_TimKiem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pHONGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PHONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.project_KTXDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SinhVien_TimKiem)).EndInit();
             this.TabPage_Child_SinhVien_ThemSua.ResumeLayout(false);
@@ -1012,8 +1004,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private Project_KTXDataSet project_KTXDataSet;
-        private System.Windows.Forms.BindingSource pHONGBindingSource;
-        private Project_KTXDataSetTableAdapters.PHONGTableAdapter pHONGTableAdapter;
+        private System.Windows.Forms.BindingSource PHONGBindingSource;
+        private Project_KTXDataSetTableAdapters.PHONGTableAdapter PHONGTableAdapter;
         private MonoFlat.MonoFlat_NotificationBox NotificationBox_SinhVien_TimKiem;
         private iTalk.iTalk_TextBox_Small TextBox_SinhVien_ThemSua_DiaChi;
         private MonoFlat.MonoFlat_Label monoFlat_Label11;
