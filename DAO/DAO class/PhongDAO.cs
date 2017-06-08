@@ -104,8 +104,8 @@ namespace DAO
 
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<PHONG> result = KTXe.PHONGs.AsQueryable().Where(x =>
-            (p.MaPhong == null || x.MaPhong == p.MaPhong) &&
-            (p.TenP == null || x.TenP == p.TenP));
+            (p.MaPhong == "" || x.MaPhong == p.MaPhong) &&
+            (p.TenP == "" || x.TenP == p.TenP));
             return result;
 
         }

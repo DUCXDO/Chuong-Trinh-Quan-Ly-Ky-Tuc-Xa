@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 namespace DAO
-{   public interface ISoGhiDienNuocDAO
+{
+    public interface ISoGhiDienNuocDAO
     {
         SOGHIDIENNUOC ThemSGDN(SOGHIDIENNUOCDTO sg);
         SOGHIDIENNUOC SuaSGDN(SOGHIDIENNUOCDTO sg);
@@ -32,7 +33,8 @@ namespace DAO
                 KTXe.SaveChanges();
                 //Trả về đối tượng mới thêm
                 return result;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return null;
             }
@@ -58,7 +60,8 @@ namespace DAO
                     return null;
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return null;
             }
@@ -71,7 +74,8 @@ namespace DAO
                 SOGHIDIENNUOC delSG = KTXe.SOGHIDIENNUOCs.SingleOrDefault(x => x.MaSo == MaSG);
                 SOGHIDIENNUOC result = KTXe.SOGHIDIENNUOCs.Remove(delSG);
                 return result;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return null;
             }
@@ -91,7 +95,7 @@ namespace DAO
         public IEnumerable<SOGHIDIENNUOC> TimSGDN(SOGHIDIENNUOCDTO sg)
         {
             KTXEntities KTXe = new KTXEntities();
-            IEnumerable<SOGHIDIENNUOC> findSG = KTXe.SOGHIDIENNUOCs.AsQueryable().Where(x => (sg.MaSo == null || x.MaSo == sg.MaSo)&(sg.Nam==null || x.Nam== sg.Nam)&(sg.TenSo==null||x.TenSo== sg.TenSo));
+            IEnumerable<SOGHIDIENNUOC> findSG = KTXe.SOGHIDIENNUOCs.AsQueryable().Where(x => (sg.MaSo == "" || x.MaSo == sg.MaSo) & (sg.Nam == 0 || x.Nam == sg.Nam) & (sg.TenSo == "" || x.TenSo == sg.TenSo));
             return findSG;
         }
     }

@@ -75,9 +75,9 @@ namespace DAO
 
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<HOPDONG> result = KTXe.HOPDONGs.AsQueryable().Where(x =>
-            (hd.MaSV == null || x.MaSV == hd.MaSV) &&
-            (hd.SoHD == null || x.SoHD == hd.SoHD) &&
-            (hd.MaPhong == null) || (x.MaPhong == hd.MaPhong) &&
+            (hd.MaSV == "" || x.MaSV == hd.MaSV) &&
+            (hd.SoHD == "" || x.SoHD == hd.SoHD) &&
+            (hd.MaPhong == "") || (x.MaPhong == hd.MaPhong) &&
             (hd.NgayLap == null) || (x.NgayLap == hd.NgayLap));
             return result;
 

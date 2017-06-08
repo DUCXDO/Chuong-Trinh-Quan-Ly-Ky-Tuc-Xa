@@ -100,7 +100,7 @@ namespace DAO
         public IEnumerable<TAISAN> TimTS(TAISANDTO ts)
         {
             KTXEntities KTXe = new KTXEntities();
-            IEnumerable<TAISAN> findTS = KTXe.TAISANs.AsQueryable().Where(x => (ts.MaTS == null || x.MaTS == ts.MaTS) && (ts.SoLuong == null || x.SoLuong == ts.SoLuong) && (ts.TenTS == null || x.TenTS == ts.TenTS) && (ts.TinhTrang == null || x.TinhTrang == ts.TinhTrang));
+            IEnumerable<TAISAN> findTS = KTXe.TAISANs.AsQueryable().Where(x => (ts.MaTS == "" || x.MaTS == ts.MaTS) && (ts.SoLuong == 0 || x.SoLuong == ts.SoLuong) && (ts.TenTS == "" || x.TenTS == ts.TenTS) && (ts.TinhTrang == "" || x.TinhTrang == ts.TinhTrang));
             return findTS;
         }
     }

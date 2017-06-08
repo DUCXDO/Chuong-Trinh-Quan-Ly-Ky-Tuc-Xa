@@ -115,8 +115,8 @@ namespace DAO.DAO_class
 
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<PHIEUTRANGBI> result = KTXe.PHIEUTRANGBIs.AsQueryable().Where(x =>
-            (ptb.MaTS == null || x.MaTS == ptb.MaTS) &&
-            (ptb.MaPhong == null || x.MaPhong == ptb.MaPhong));
+            (ptb.MaTS == "" || x.MaTS == ptb.MaTS) &&
+            (ptb.MaPhong == "" || x.MaPhong == ptb.MaPhong));
             return result;
 
         }

@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 namespace DAO
-{   public interface IPhieuGhiDienNuocDAO
+{
+    public interface IPhieuGhiDienNuocDAO
     {
         PHIEUGHIDIENNUOC ThemPGDN(PHIEUGHIDIENNUOCDTO pg);
         PHIEUGHIDIENNUOC SuaPGDN(PHIEUGHIDIENNUOCDTO pg);
@@ -52,7 +53,7 @@ namespace DAO
                 PHIEUGHIDIENNUOC editPG = KTXe.PHIEUGHIDIENNUOCs.SingleOrDefault(x => x.MaPhieuGhiDienNuoc == pg.MaPhieuGhiDienNuoc);
                 editPG.MaPhieuGhiDienNuoc = pg.MaPhieuGhiDienNuoc;
                 editPG.LoaiPhieuGhi = pg.LoaiPhieuGhi;
-                editPG.MaPhong = pg.MaPhong;               
+                editPG.MaPhong = pg.MaPhong;
                 editPG.MaSo = pg.MaSo;
                 editPG.NgayGhi = pg.NgayGhi;
                 editPG.SoDienNuoc = pg.SoDienNuoc;
@@ -113,7 +114,14 @@ namespace DAO
         public IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOC pg)
         {
             KTXEntities KTXe = new KTXEntities();
-            IEnumerable<PHIEUGHIDIENNUOC> findPG = KTXe.PHIEUGHIDIENNUOCs.AsQueryable().Where(x =>(pg.MaPhieuGhiDienNuoc==null||x.MaPhieuGhiDienNuoc== pg.MaPhieuGhiDienNuoc)&& (pg.LoaiPhieuGhi == null || x.LoaiPhieuGhi == pg.LoaiPhieuGhi) && (pg.MaPhong == null || x.MaPhong == pg.MaPhong) && (pg.MaSo == null || x.MaSo == pg.MaSo)&&(pg.NgayGhi==null|| x.NgayGhi== pg.NgayGhi)&&(pg.SoDienNuoc==null|| x.SoDienNuoc== pg.SoDienNuoc));
+            IEnumerable<PHIEUGHIDIENNUOC> findPG = KTXe.PHIEUGHIDIENNUOCs.AsQueryable().Where(x => (pg.MaPhieuGhiDienNuoc == "" || x.MaPhieuGhiDienNuoc == pg.MaPhieuGhiDienNuoc) && (x.LoaiPhieuGhi == pg.LoaiPhieuGhi) && (pg.MaPhong == "" || x.MaPhong == pg.MaPhong) && (pg.MaSo == "" || x.MaSo == pg.MaSo) && (pg.NgayGhi == null || x.NgayGhi == pg.NgayGhi) && (pg.SoDienNuoc == 0 || x.SoDienNuoc == pg.SoDienNuoc));
+            return findPG;
+        }
+
+        public IEnumerable<PHIEUGHIDIENNUOC> TimPGDNKhongTheoLoaiPhieuGhi(PHIEUGHIDIENNUOC pg)
+        {
+            KTXEntities KTXe = new KTXEntities();
+            IEnumerable<PHIEUGHIDIENNUOC> findPG = KTXe.PHIEUGHIDIENNUOCs.AsQueryable().Where(x => (pg.MaPhieuGhiDienNuoc == "" || x.MaPhieuGhiDienNuoc == pg.MaPhieuGhiDienNuoc) && (pg.MaPhong == "" || x.MaPhong == pg.MaPhong) && (pg.MaSo == "" || x.MaSo == pg.MaSo) && (pg.NgayGhi == null || x.NgayGhi == pg.NgayGhi) && (pg.SoDienNuoc == 0 || x.SoDienNuoc == pg.SoDienNuoc));
             return findPG;
         }
     }
