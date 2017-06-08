@@ -16,10 +16,12 @@ namespace ProjectKTX
     public partial class Form1 : Form
     {
         private readonly SinhVienBUS SinhVienBUS;
+        private readonly HopDongBUS HopDongBUS;
         public Form1()
         {
             InitializeComponent();
             SinhVienBUS = new SinhVienBUS(new SinhVienDAO(), new PhongDAO(), new HopDongDAO());
+            HopDongBUS = new HopDongBUS(new HopDongDAO(), new PhongDAO());
         }
 
         #region Sinh viên - Tìm kiếm
@@ -29,7 +31,7 @@ namespace ProjectKTX
         {
             BindingList<PHONG> dataSource = new BindingList<PHONG>();
 
-            foreach(var item in SinhVienBUS.DSTatCaPhong())
+            foreach (var item in SinhVienBUS.DSTatCaPhong())
             {
                 dataSource.Add(item);
             }
@@ -57,7 +59,7 @@ namespace ProjectKTX
             sv.SoDT = TextBox_SinhVien_TimKiem_SoDT.Text;
             // Lấy tên sinh viên từ textbox
             sv.TenSV = TextBox_SinhVien_TimKiem_TenSV.Text;
-            
+
             // Tạo danh sách kết quả mới (BindingList mới làm datasource cho datagrid được)
             BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
 
@@ -192,7 +194,7 @@ namespace ProjectKTX
                 sv.DiaChi = TextBox_SinhVien_ThemSua_DiaChi.Text;
 
                 String result = SinhVienBUS.ThemSV(sv);
-                if(result == null)
+                if (result == null)
                 {
                     NotificationBox_SinhVien_ThemSua.Text = "Thêm mới sinh viên thành công!";
                     NotificationBox_SinhVien_ThemSua.Visible = true;
@@ -297,10 +299,114 @@ namespace ProjectKTX
 
         #endregion
 
+        #region Hợp đồng - Tìm kiếm
+
+        // Load combo box khi vào tabpage
+        private void TabPage_Child_HopDong_TimKiem_Enter(object sender, EventArgs e)
+        {
+            BindingList<PHONG> dataSource = new BindingList<PHONG>();
+
+            foreach (var item in SinhVienBUS.DSTatCaPhong())
+            {
+                dataSource.Add(item);
+            }
+            // Đưa danh sách phòng thành datasource của combo box
+            ComboBox_SinhVien_TimKiem_Phong.DataSource = dataSource;
+            // Đặt giá trị hiện ra và giá trị chọn của combo box
+            ComboBox_HopDong_TimKiem_Phong.DisplayMember = "TenP";
+            ComboBox_HopDong_TimKiem_Phong.ValueMember = "MaPhong";
+        }
+
+        // Khi nút tìm kiếm được bấm
+        private void Button_HopDong_TimKiem_TimKiem_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng hợp đồng mới
+            HOPDONGDTO hd = new HOPDONGDTO();
+            // Lấy mã sinh viên từ textbox
+            hd.MaSV = TextBox_HopDong_TimKiem_MaSV.Text;
+            // Lấy số hợp đồng từ textbox
+            hd.SoHD = TextBox_HopDong_TimKiem_SoHD.Text;
+            // Lấy mã phòng từ textbox
+            hd.MaPhong = TextBox_HopDong_TimKiem_MaPhong.Text;
+
+            // Tạo danh sách kết quả mới (BindingList mới làm datasource cho datagrid được)
+            BindingList<HOPDONG> dataSource = new BindingList<HOPDONG>();
+
+            // Với mỗi kết quả trong tìm kiếm thì add vào danh sách kết quả ở trên
+            foreach (var item in HopDongBUS.TimHD(hd))
+            {
+                dataSource.Add(item);
+            }
+            // Nếu kết quả rỗng
+            if (dataSource.Count == 0)
+            {
+                // Thay đổi text của hộp thông báo
+                NotificationBox_HopDong_TimKiem.Text = "Không tìm thấy dữ liệu!";
+                // Hiện hộp thông báo
+                NotificationBox_HopDong_TimKiem.Visible = true;
+            }
+            // Nếu tìm thấy kết quả
+            else
+            {
+                // Hiện kết quả trong datagrid 
+                dataGridView_HopDong_TimKiem.DataSource = dataSource;
+            }
+        }
+
+        // Nút tìm theo phòng được bấm
+        private void Button_HopDong_TimKiem_TimKiemTheoPhong_Click(object sender, EventArgs e)
+        {
+            BindingList<HOPDONG> dataSource = new BindingList<HOPDONG>();
+            foreach (var item in HopDongBUS.TimHDTheoPhong(ComboBox_SinhVien_TimKiem_Phong.SelectedValue.ToString()))
+            {
+                dataSource.Add(item);
+            }
+
+            if (dataSource.Count == 0)
+            {
+                NotificationBox_HopDong_TimKiem.Text = "Hiện không có hợp đồng nào được lập với phòng này!";
+                NotificationBox_HopDong_TimKiem.Visible = true;
+            }
+            else
+            {
+                dataGridView_HopDong_TimKiem.DataSource = dataSource;
+            }
+        }
+
+        // Nút xóa được bấm
+        private void Button_HopDong_TimKiem_Xoa_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView_HopDong_TimKiem.SelectedRows.Count == 0)
+            {
+                NotificationBox_HopDong_TimKiem.Text = "Chưa có hợp đồng nào được chọn để xóa!";
+                NotificationBox_HopDong_TimKiem.Visible = true;
+            }
+            else
+            {
+                HOPDONG selected = dataGridView_HopDong_TimKiem.SelectedRows[0].DataBoundItem as HOPDONG;
+                String result = HopDongBUS.XoaHD(selected.SoHD);
+                if (result == null)
+                {
+                    NotificationBox_HopDong_TimKiem.Text = "Xóa hợp đồng thành công!";
+                    NotificationBox_HopDong_TimKiem.Visible = true;
+                    dataGridView_HopDong_TimKiem.DataSource = new BindingList<SINHVIEN>();
+
+                }
+                else
+                {
+                    NotificationBox_HopDong_TimKiem.Text = result;
+                    NotificationBox_HopDong_TimKiem.Visible = true;
+                }
+            }
+        }
+
+        #endregion
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         // Hàm làm trắng textbox trong control
@@ -314,7 +420,5 @@ namespace ProjectKTX
                     ClearAllText(c);
             }
         }
-
-        
     }
 }
