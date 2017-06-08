@@ -4623,7 +4623,7 @@ namespace iTalk
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {
             base.OnPaint(e);
-            e.Graphics.DrawLine(new Pen(Color.FromArgb(184, 183, 188)), 0, 50, Width, Height);
+            e.Graphics.DrawLine(new Pen(Color.FromArgb(146, 212, 214)), 0, 5, Width, 5);
         }
     }
 
@@ -4756,7 +4756,6 @@ namespace iTalk
         }
     }
     #endregion
-
     #region ComboBox
 
     class iTalk_ComboBox_Custom : ComboBox
