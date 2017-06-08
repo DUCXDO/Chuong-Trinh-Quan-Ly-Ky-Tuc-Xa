@@ -13,7 +13,14 @@ namespace BUS
     {
         private readonly IHopDongDAO _hd;
         private readonly IPhongDAO _p;
-     //Hàm check cái thành phần hợp lệ
+
+        public HopDongBUS(HopDongDAO hd, PhongDAO p)
+        {
+            _hd = hd;
+            _p = p;
+        }
+
+        //Hàm check cái thành phần hợp lệ
         public String kiemTraHopDong(HOPDONGDTO hd)
         {
             // Nội dung kiểm tra
@@ -78,10 +85,10 @@ namespace BUS
                 return "Mã hợp đồng đã tồn tại!";
             }
         }
-        public String XoaHD(String maHD)
+        public String XoaHD(String soHD)
         {
             // Kiểm tra hợp đồng có tồn tại không ?
-            HOPDONG check = _hd.TimHDTheoSoHD(maHD);
+            HOPDONG check = _hd.TimHDTheoSoHD(soHD);
             // Không tồn tại
             if (check == null)
             {
@@ -112,6 +119,13 @@ namespace BUS
         {
             // Hàm tìm hợp đồng theo các điều kiện
             IEnumerable<HOPDONG> result = _hd.TimHD(hd);
+            return result;
+        }
+
+        public IEnumerable<HOPDONG> TimHDTheoPhong(String maP)
+        {
+            // Hàm tìm hợp đồng theo phòng
+            IEnumerable<HOPDONG> result = _hd.TimHDTheoP(maP);
             return result;
         }
     }

@@ -72,8 +72,8 @@ namespace DAO
 
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<PHIEUTHU> result = KTXe.PHIEUTHUs.AsQueryable().Where(x =>
-            (pt.SoHD == null || x.SoHD == pt.SoHD) &&
-            (pt.SoPT == null || x.SoPT == pt.SoPT) &&
+            (pt.SoHD == "" || x.SoHD == pt.SoHD) &&
+            (pt.SoPT == "" || x.SoPT == pt.SoPT) &&
             (pt.NgayLap == null) || (x.NgayLap.Date == pt.NgayLap.Date));
             return result;
 

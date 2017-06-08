@@ -89,7 +89,6 @@ namespace BUS
             }
         }
 
-
         public String SuaSV(SINHVIENDTO sv)
         {
             // Kiểm tra thông tin sửa sinh viên có hợp lệ không

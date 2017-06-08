@@ -30,7 +30,7 @@ namespace DAO
                 addHD.NgayLap = hd.NgayLap;
                 addHD.SoHoaDon = hd.SoHoaDon;
                 addHD.SoTien = hd.SoTien;
-                
+
                 //Thêm SG mới
                 HOADON result = KTXe.HOADONs.Add(addHD);
                 //Lưu thay đổi
@@ -73,7 +73,7 @@ namespace DAO
         public IEnumerable<HOADON> TimHD(HOADONDTO hd)
         {
             KTXEntities KTXe = new KTXEntities();
-            IEnumerable<HOADON> findHD = KTXe.HOADONs.AsQueryable().Where(x => (hd.MaPhong== null || x.MaPhong == hd.MaPhong) & (hd.MaSo == null || x.MaSo == hd.MaSo) & (hd.NgayLap == null || x.NgayLap == hd.NgayLap)&&(hd.SoHoaDon==null|| x.SoHoaDon== hd.SoHoaDon)&&(hd.SoTien==null|| x.SoTien== hd.SoTien));
+            IEnumerable<HOADON> findHD = KTXe.HOADONs.AsQueryable().Where(x => (hd.MaPhong == "" || x.MaPhong == hd.MaPhong) & (hd.MaSo == "" || x.MaSo == hd.MaSo) & (hd.NgayLap == null || x.NgayLap == hd.NgayLap) && (hd.SoHoaDon == "" || x.SoHoaDon == hd.SoHoaDon) && (hd.SoTien == 0 || x.SoTien == hd.SoTien));
             return findHD;
         }
         public HOADON TimHDTheoMaP(String maP)

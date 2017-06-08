@@ -113,7 +113,7 @@ namespace BUS
             }
         }
 
-        public IEnumerable<PHIEUTHU> TimSV(PHIEUTHUDTO pt)
+        public IEnumerable<PHIEUTHU> TimPT(PHIEUTHUDTO pt)
         {
             // Hàm tìm sinh viên theo các điều kiện
             IEnumerable<PHIEUTHU> result = _pt.TimPT(pt);
