@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO.DAO_class
+namespace DAO
 {
     public interface IPhieuTrangBiDAO
     {
@@ -13,9 +13,10 @@ namespace DAO.DAO_class
         PHIEUTRANGBI XoaPhieuTB(String maTS, String maP);
         PHIEUTRANGBI SuaPhieuTB(PHIEUTRANGBIDTO ptb);
         IEnumerable<PHIEUTRANGBI> TimTatCaPhieuTrangBi();
-        PHIEUTRANGBI TimPhieuTBTheoMaPhong(String maP);
-        PHIEUTRANGBI TimPhieuTBTheoMaTaiSan(String maTS);
+        IEnumerable<PHIEUTRANGBI> TimPhieuTBTheoMaPhong(String maP);
+        IEnumerable<PHIEUTRANGBI> TimPhieuTBTheoMaTaiSan(String maTS);
         IEnumerable<PHIEUTRANGBI> TimPhieuTB(PHIEUTRANGBIDTO ptb);
+        PHIEUTRANGBI TimPhieuTBTheoCaHaiMa(String maTS, String maP);
     }
 
     public class PhieuTrangBiDAO : IPhieuTrangBiDAO
@@ -92,20 +93,29 @@ namespace DAO.DAO_class
 
         }
 
-        public PHIEUTRANGBI TimPhieuTBTheoMaPhong(String maP)
+        public IEnumerable<PHIEUTRANGBI> TimPhieuTBTheoMaPhong(String maP)
         {
 
             KTXEntities KTXe = new KTXEntities();
-            PHIEUTRANGBI result = KTXe.PHIEUTRANGBIs.SingleOrDefault(x => x.MaPhong == maP);
+            IEnumerable<PHIEUTRANGBI> result = KTXe.PHIEUTRANGBIs.AsQueryable().Where(x => x.MaPhong == maP);
             return result;
 
         }
 
-        public PHIEUTRANGBI TimPhieuTBTheoMaTaiSan(String maTS)
+        public IEnumerable<PHIEUTRANGBI> TimPhieuTBTheoMaTaiSan(String maTS)
         {
 
             KTXEntities KTXe = new KTXEntities();
-            PHIEUTRANGBI result = KTXe.PHIEUTRANGBIs.SingleOrDefault(x => x.MaTS == maTS);
+            IEnumerable<PHIEUTRANGBI> result = KTXe.PHIEUTRANGBIs.AsQueryable().Where(x => x.MaTS == maTS);
+            return result;
+
+        }
+
+        public PHIEUTRANGBI TimPhieuTBTheoCaHaiMa(String maTS, String maP)
+        {
+
+            KTXEntities KTXe = new KTXEntities();
+            PHIEUTRANGBI result = KTXe.PHIEUTRANGBIs.SingleOrDefault(x => x.MaTS == maTS && x.MaPhong == maP);
             return result;
 
         }

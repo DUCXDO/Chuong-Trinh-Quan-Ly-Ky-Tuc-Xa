@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="HopDongBUS.cs" />
+    <Compile Include="PhieuGhiDienNuocBUS.cs" />
     <Compile Include="PhieuThuBUS.cs" />
+    <Compile Include="PhieuTrangBiBUS.cs" />
     <Compile Include="PhongBUS.cs" />
     <Compile Include="SinhVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

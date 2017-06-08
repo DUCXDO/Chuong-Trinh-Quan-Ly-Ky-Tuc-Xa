@@ -15,7 +15,8 @@ namespace DAO
         PHIEUGHIDIENNUOC TimPGDNTheoMaPGDN(String maPG);
         PHIEUGHIDIENNUOC TimPGDNTheoMaP(String maP);
         PHIEUGHIDIENNUOC TimPGDNTheoMaS(String maS);
-        IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOC pg);
+        IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOCDTO pg);
+        IEnumerable<PHIEUGHIDIENNUOC> TimPGDNKhongTheoLoaiPhieuGhi(PHIEUGHIDIENNUOCDTO pg);
     }
     public class PhieuGhiDienNuocDAO : IPhieuGhiDienNuocDAO
     {
@@ -111,14 +112,14 @@ namespace DAO
             PHIEUGHIDIENNUOC findPG = KTXe.PHIEUGHIDIENNUOCs.SingleOrDefault(x => x.MaSo == maS);
             return findPG;
         }
-        public IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOC pg)
+        public IEnumerable<PHIEUGHIDIENNUOC> TimPGDN(PHIEUGHIDIENNUOCDTO pg)
         {
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<PHIEUGHIDIENNUOC> findPG = KTXe.PHIEUGHIDIENNUOCs.AsQueryable().Where(x => (pg.MaPhieuGhiDienNuoc == "" || x.MaPhieuGhiDienNuoc == pg.MaPhieuGhiDienNuoc) && (x.LoaiPhieuGhi == pg.LoaiPhieuGhi) && (pg.MaPhong == "" || x.MaPhong == pg.MaPhong) && (pg.MaSo == "" || x.MaSo == pg.MaSo) && (pg.NgayGhi == null || x.NgayGhi == pg.NgayGhi) && (pg.SoDienNuoc == 0 || x.SoDienNuoc == pg.SoDienNuoc));
             return findPG;
         }
 
-        public IEnumerable<PHIEUGHIDIENNUOC> TimPGDNKhongTheoLoaiPhieuGhi(PHIEUGHIDIENNUOC pg)
+        public IEnumerable<PHIEUGHIDIENNUOC> TimPGDNKhongTheoLoaiPhieuGhi(PHIEUGHIDIENNUOCDTO pg)
         {
             KTXEntities KTXe = new KTXEntities();
             IEnumerable<PHIEUGHIDIENNUOC> findPG = KTXe.PHIEUGHIDIENNUOCs.AsQueryable().Where(x => (pg.MaPhieuGhiDienNuoc == "" || x.MaPhieuGhiDienNuoc == pg.MaPhieuGhiDienNuoc) && (pg.MaPhong == "" || x.MaPhong == pg.MaPhong) && (pg.MaSo == "" || x.MaSo == pg.MaSo) && (pg.NgayGhi == null || x.NgayGhi == pg.NgayGhi) && (pg.SoDienNuoc == 0 || x.SoDienNuoc == pg.SoDienNuoc));

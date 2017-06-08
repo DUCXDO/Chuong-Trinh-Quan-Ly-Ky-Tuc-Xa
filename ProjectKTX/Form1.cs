@@ -15,11 +15,11 @@ namespace ProjectKTX
 {
     public partial class Form1 : Form
     {
-        private readonly SinhVienBUS BUS;
+        private readonly SinhVienBUS SinhVienBUS;
         public Form1()
         {
             InitializeComponent();
-            BUS = new SinhVienBUS(new SinhVienDAO(), new PhongDAO(), new HopDongDAO());
+            SinhVienBUS = new SinhVienBUS(new SinhVienDAO(), new PhongDAO(), new HopDongDAO());
         }
 
         #region Sinh viên - Tìm kiếm
@@ -29,7 +29,7 @@ namespace ProjectKTX
         {
             BindingList<PHONG> dataSource = new BindingList<PHONG>();
 
-            foreach(var item in BUS.DSTatCaPhong())
+            foreach(var item in SinhVienBUS.DSTatCaPhong())
             {
                 dataSource.Add(item);
             }
@@ -62,7 +62,7 @@ namespace ProjectKTX
             BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
 
             // Với mỗi kết quả trong tìm kiếm thì add vào danh sách kết quả ở trên
-            foreach (var item in BUS.TimSV(sv))
+            foreach (var item in SinhVienBUS.TimSV(sv))
             {
                 dataSource.Add(item);
             }
@@ -86,7 +86,7 @@ namespace ProjectKTX
         private void Button_SinhVien_TimKiem_TimTheoPhong_Click(object sender, EventArgs e)
         {
             BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
-            foreach (var item in BUS.TimSVTheoPhong(ComboBox_SinhVien_TimKiem_Phong.SelectedValue.ToString()))
+            foreach (var item in SinhVienBUS.TimSVTheoPhong(ComboBox_SinhVien_TimKiem_Phong.SelectedValue.ToString()))
             {
                 dataSource.Add(item);
             }
@@ -114,7 +114,7 @@ namespace ProjectKTX
             else
             {
                 SINHVIEN selected = dataGridView_SinhVien_TimKiem.SelectedRows[0].DataBoundItem as SINHVIEN;
-                String result = BUS.XoaSV(selected.MaSV);
+                String result = SinhVienBUS.XoaSV(selected.MaSV);
                 if (result == null)
                 {
                     NotificationBox_SinhVien_TimKiem.Text = "Xóa sinh viên thành công!";
@@ -151,7 +151,7 @@ namespace ProjectKTX
 
                 // Hiện tất cả sinh viên khi chuyển sang tabpage ThemSua
                 BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
-                foreach (var item in BUS.TimTatCaSV())
+                foreach (var item in SinhVienBUS.TimTatCaSV())
                 {
                     dataSource.Add(item);
                 }
@@ -191,14 +191,14 @@ namespace ProjectKTX
                 sv.NgaySinh = dateTimePicker_SinhVien_ThemSua_NgaySinh.Value;
                 sv.DiaChi = TextBox_SinhVien_ThemSua_DiaChi.Text;
 
-                String result = BUS.ThemSV(sv);
+                String result = SinhVienBUS.ThemSV(sv);
                 if(result == null)
                 {
                     NotificationBox_SinhVien_ThemSua.Text = "Thêm mới sinh viên thành công!";
                     NotificationBox_SinhVien_ThemSua.Visible = true;
 
                     BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
-                    foreach (var item in BUS.TimSV(sv))
+                    foreach (var item in SinhVienBUS.TimSV(sv))
                     {
                         dataSource.Add(item);
                     }
@@ -231,14 +231,14 @@ namespace ProjectKTX
                 sv.NgaySinh = dateTimePicker_SinhVien_ThemSua_NgaySinh.Value;
                 sv.DiaChi = TextBox_SinhVien_ThemSua_DiaChi.Text;
 
-                String result = BUS.SuaSV(sv);
+                String result = SinhVienBUS.SuaSV(sv);
                 if (result == null)
                 {
                     NotificationBox_SinhVien_ThemSua.Text = "Sửa sinh viên thành công!";
                     NotificationBox_SinhVien_ThemSua.Visible = true;
 
                     BindingList<SINHVIEN> dataSource = new BindingList<SINHVIEN>();
-                    foreach (var item in BUS.TimSV(sv))
+                    foreach (var item in SinhVienBUS.TimSV(sv))
                     {
                         dataSource.Add(item);
                     }
@@ -268,7 +268,7 @@ namespace ProjectKTX
             else
             {
                 SINHVIEN selected = dataGridView_SinhVien_ThemSua.SelectedRows[0].DataBoundItem as SINHVIEN;
-                String result = BUS.XoaSV(selected.MaSV);
+                String result = SinhVienBUS.XoaSV(selected.MaSV);
                 if (result == null)
                 {
                     NotificationBox_SinhVien_ThemSua.Text = "Xóa sinh viên thành công!";
